@@ -1,0 +1,52 @@
+---
+title: Create agents and tools
+description: Build custom agents and extend local tool capabilities in Rainy MaTE.
+icon: bot
+---
+
+## Scope
+
+This guide is for developers who want to:
+
+- Design production agent profiles.
+- Add new executable tools to the desktop runtime.
+- Keep Airlock and policy behavior safe by default.
+
+## Build an agent profile
+
+Use `Agent Builder` in the app for normal profile creation, then validate with test prompts in `Agent Chat`.
+
+Recommended sequence:
+
+1. Define narrow role and expected outputs in `Soul`.
+2. Enable only required tool categories in `Skills`.
+3. Keep memory scope minimal in early versions.
+4. Set strict Airlock defaults.
+5. Validate with representative prompts before deploying.
+
+## Add a new local tool (Rust)
+
+Implement tools in `src-tauri/src/services/skill_executor.rs`.
+
+1. Add the tool argument schema struct.
+2. Add the tool definition in `get_tool_definitions()`.
+3. Add method routing in `execute()`.
+4. Implement handler logic (for example `handle_new_skill`).
+5. Assign correct Airlock level and policy behavior.
+6. Add tests in Rust for allowed/blocked behavior.
+
+## Expose tool behavior to UI
+
+Update relevant UI defaults and docs so users can understand and safely use the new capability.
+
+Common places:
+
+- `src/components/neural/*`
+- `src/services/tauri.ts`
+- `rainy-docs/reference/skills-reference.mdx`
+
+## Security requirements
+
+- Avoid broad filesystem or shell access by default.
+- Keep dangerous operations explicitly gated.
+- Document any new destructive path in `/reference/airlock-security`.

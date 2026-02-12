@@ -1,18 +1,34 @@
 ---
 title: Install desktop app
-description: Install Rainy MaTE for production use and keep the desktop client updated.
+description: Install Rainy MaTE BETA 1 on macOS and allow first launch in macOS security settings.
 icon: download
 ---
 
-## Supported deployment model
-
-Rainy MaTE is distributed as a desktop app. The current documented release baseline is `0.5.19`.
+<Warning>
+  `BETA 1` is available for `macOS` only. Windows and Linux support is planned for the near future.
+</Warning>
 
 ## Install from GitHub releases
 
 1. Open [Rainy MaTE Releases](https://github.com/ferxalbs/rainy-cowork/releases).
-2. Download the latest package for your OS.
-3. Install and launch the app.
+2. Download the latest macOS package.
+3. Install and try to launch the app.
+
+## macOS security prompt (important for BETA 1)
+
+This beta build is not yet Apple code signed/notarized. macOS may show that the app cannot be opened.
+
+Use this flow to allow it:
+
+1. Try opening Rainy MaTE once from Finder.
+2. Open `System Settings -> Privacy & Security`.
+3. In the security section, find the blocked app message and click `Open Anyway`.
+4. Confirm by clicking `Open` in the follow-up dialog.
+5. Launch Rainy MaTE again.
+
+<Info>
+  You may need administrator credentials during this process depending on your macOS policy.
+</Info>
 
 ## First launch checklist
 
@@ -25,25 +41,6 @@ Rainy MaTE is distributed as a desktop app. The current documented release basel
 
 - Keep all operator desktops on the same release tag.
 - Apply updates in a staging workspace first.
-- Roll out to production users after successful validation.
-
-<Warning>
-  Avoid mixing old and new desktop versions in the same operations team when using shared Rainy ATM workflows.
-</Warning>
-
-## Build from source (advanced)
-
-Use source builds only if you need custom code changes.
-
-```bash
-pnpm install
-pnpm tauri dev
-```
-
-For release builds:
-
-```bash
-pnpm tauri build
-```
+- Roll out to production users after validation.
 
 Continue with `/users/first-workflow` after install.

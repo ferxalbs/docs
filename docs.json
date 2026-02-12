@@ -19,7 +19,7 @@
         "groups": [
           {
             "group": "Overview",
-            "pages": ["welcome", "quickstart"]
+            "pages": ["welcome", "quickstart", "users/beta-limitations"]
           }
         ]
       },
@@ -56,6 +56,8 @@
             "pages": [
               "developers/local-setup",
               "developers/architecture",
+              "developers/agents-and-tools",
+              "developers/private-atm-api",
               "developers/testing",
               "developers/release"
             ]
@@ -78,10 +80,20 @@
     ]
   },
   "navbar": {
+    "links": [
+      {
+        "label": "Website",
+        "href": "https://rainy-mate.com"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/ferxalbs/rainy-mate"
+      }
+    ],
     "primary": {
       "type": "button",
-      "label": "GitHub",
-      "href": "https://github.com/ferxalbs/rainy-cowork"
+      "label": "Dashboard",
+      "href": "https://app.rainy-mate.com"
     }
   },
   "contextual": {
@@ -99,8 +111,7 @@
   "footer": {
     "socials": {
       "x": "https://x.com/rainymateoff",
-      "github": "https://github.com/ferxalbs/rainy-cowork",
-      "linkedin": "https://linkedin.com/company/rainy-mate"
+      "github": "https://github.com/ferxalbs/rainy-mate"
     }
   }
 }

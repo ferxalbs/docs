@@ -1,14 +1,18 @@
 ---
 title: Quickstart
-description: Install Rainy MaTE and run your first workspace task in minutes.
+description: Install Rainy MaTE BETA 1 on macOS and run your first workspace task.
 icon: bolt
 ---
+
+<Warning>
+  `BETA 1` is currently `macOS-only`. Windows and Linux support is planned for a near-future release.
+</Warning>
 
 ## Before you begin
 
 You need:
 
-- macOS, Windows, or Linux desktop access.
+- macOS desktop access.
 - One provider API key that your deployment supports.
 - A local folder where Rainy MaTE can read and write files.
 
@@ -16,10 +20,13 @@ You need:
 
 <Steps>
   <Step title="Download the installer">
-    Open the [Rainy MaTE releases page](https://github.com/ferxalbs/rainy-cowork/releases) and choose your operating system package.
+    Open the [Rainy MaTE releases page](https://github.com/ferxalbs/rainy-cowork/releases) and download the latest macOS package.
   </Step>
-  <Step title="Install and open Rainy MaTE">
-    Complete installation and launch the app.
+  <Step title="Install Rainy MaTE">
+    Complete installation and try to open the app.
+  </Step>
+  <Step title="Allow app in macOS settings if blocked">
+    If macOS blocks the app, follow `/users/install-desktop` to allow the app from `System Settings -> Privacy & Security`.
   </Step>
   <Step title="Grant folder access when prompted">
     The app needs explicit workspace access for file operations.
@@ -39,10 +46,6 @@ You need:
     Save the key so it can be used by agent tasks.
   </Step>
 </Steps>
-
-<Info>
-  Provider keys are stored locally by the desktop app. Rotate or remove keys from the same settings panel.
-</Info>
 
 ## Set your first workspace
 

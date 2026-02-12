@@ -1,10 +1,24 @@
 ---
 title: Welcome to Rainy MaTE
 sidebarTitle: Welcome
-description: Public launch documentation for installing, operating, and developing Rainy MaTE.
+description: Public launch documentation for Rainy MaTE BETA 1.
 ---
 
+<Warning>
+  `Rainy MaTE BETA 1` is currently available for `macOS` only. Windows and Linux support is planned for the near future.
+</Warning>
+
 Rainy MaTE is a desktop AI workspace built with React, Tauri, and Rust. These docs are organized by outcome so you can move from setup to reliable production use.
+
+## BETA 1 release notes for users
+
+- This build does not yet include Apple code signing/notarization.
+- On first launch, macOS may block app opening until you explicitly allow it in `System Settings`.
+- See `/users/install-desktop` for the exact Gatekeeper steps.
+
+## Product naming note
+
+You will still see `rainy-cowork` in repository paths and some internal APIs. That is the original project name. The product evolved and is now published as `Rainy MaTE`.
 
 ## Choose your path
 
@@ -16,7 +30,7 @@ Rainy MaTE is a desktop AI workspace built with React, Tauri, and Rust. These do
     Connect Rainy ATM, monitor cloud activity, and control remote sessions.
   </Card>
   <Card title="I build or extend Rainy" icon="code" href="/developers/local-setup">
-    Set up the local development environment, run tests, and ship changes.
+    Set up the local development environment, build agents and tools, and ship changes.
   </Card>
   <Card title="I need security details" icon="shield" href="/reference/airlock-security">
     Review Airlock levels, approval behavior, and tool risk mapping.
@@ -27,14 +41,13 @@ Rainy MaTE is a desktop AI workspace built with React, Tauri, and Rust. These do
 
 - `Start here`: Fast onboarding for first-time users.
 - `User guide`: Daily workflows, feature behavior, and troubleshooting.
-- `Developer guide`: Local setup, architecture, testing, and release steps.
+- `Developer guide`: Setup, architecture, agent/tool development, private ATM APIs, testing, and release.
 - `Reference`: Security policies, tool catalog, and Tahoe design tokens.
 
 ## Current release target
 
-This documentation matches the `0.5.19` desktop release configured in `src-tauri/tauri.conf.json`.
+This documentation matches desktop release `0.5.19` configured in `src-tauri/tauri.conf.json`.
 
 <Info>
-  If your installed app version differs from `0.5.19`, check the GitHub release notes
-  before relying on command behavior or UI labels.
+  If your installed app version differs from `0.5.19`, check release notes before relying on UI labels or command behavior.
 </Info>

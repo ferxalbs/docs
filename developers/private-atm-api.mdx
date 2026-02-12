@@ -1,0 +1,74 @@
+---
+title: Private Rainy ATM API
+description: Internal Rainy ATM endpoints used by rainy-cowork desktop integration.
+icon: lock
+---
+
+<Warning>
+  Rainy ATM is a private internal service and is not published as a public product/API.
+</Warning>
+
+## Naming context
+
+The repository and internal code still use `rainy-cowork` naming because that was the original project name. The product name evolved to `Rainy MaTE`.
+
+## Integration boundary in desktop app
+
+Desktop integration is implemented in:
+
+- `src-tauri/src/services/atm_client.rs`
+- `src/services/tauri.ts`
+
+The desktop app calls private ATM endpoints through Tauri commands. Do not treat these routes as public stable contracts.
+
+## Endpoint groups currently used
+
+### Bootstrap and workspace
+
+- `POST /bootstrap`
+- `DELETE /bootstrap`
+- `GET /admin/workspace`
+
+### Agents and command activity
+
+- `GET /admin/agents`
+- `POST /admin/agents`
+- `GET /admin/commands`
+- `GET /admin/commands/:id`
+- `GET /admin/commands/:id/progress`
+- `GET /admin/commands/:id/metrics`
+
+### Metrics and operations
+
+- `GET /admin/metrics/commands`
+- `GET /admin/metrics/endpoints`
+- `GET /admin/metrics/slo`
+- `POST /admin/metrics/slo`
+- `GET /admin/metrics/alerts`
+- `POST /admin/metrics/alerts/sync`
+- `POST /admin/metrics/alerts/:id/ack`
+- `GET /admin/metrics/alerts/retention`
+- `POST /admin/metrics/alerts/retention`
+- `POST /admin/metrics/alerts/cleanup`
+
+### Permissions and policy
+
+- `GET /admin/permissions`
+- `POST /admin/permissions`
+- `GET /admin/permissions/audit`
+- `GET /admin/tool-policy`
+- `POST /admin/tool-policy`
+
+## Auth headers used by cowork
+
+Depending on endpoint, requests use:
+
+- `Authorization: Bearer <workspace-api-key>`
+- `x-rainy-platform-key: <platform-key>`
+- `x-rainy-api-key: <user-api-key>`
+
+## Developer guidance
+
+- Keep backward compatibility for desktop-consumed routes.
+- Version any breaking private API change together with desktop update.
+- Update `src/services/tauri.ts` and this page in the same PR when endpoints change.
