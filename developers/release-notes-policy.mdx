@@ -1,0 +1,76 @@
+---
+title: Release notes policy
+description: Simple policy for writing clear release notes as Rainy MaTE evolves.
+icon: scroll-text
+---
+
+## Why this exists
+
+Rainy MaTE is a living project. Features will change, improve, or be replaced over time.
+
+Release notes keep everyone aligned without extra ceremony.
+
+## Tone and style
+
+- Write for humans, not marketing.
+- Keep notes short and concrete.
+- Describe what changed and what users should do.
+
+## Required sections per release
+
+1. `Added`
+2. `Changed`
+3. `Fixed`
+4. `Breaking or behavior changes`
+5. `Upgrade notes`
+
+## What each section should contain
+
+### Added
+
+- New capabilities users can try now.
+
+### Changed
+
+- Workflow, UI, or defaults that behave differently.
+
+### Fixed
+
+- Bugs with visible impact and how they are resolved.
+
+### Breaking or behavior changes
+
+- Anything that can break scripts, habits, or team workflows.
+- Include migration steps when needed.
+
+### Upgrade notes
+
+- Platform notes (`macOS only` in BETA 1).
+- Security/signing notes if relevant.
+- Required actions after updating.
+
+## Minimum quality bar
+
+- Every item includes impact and scope.
+- Avoid vague text like "improvements" without detail.
+- Link to docs pages when behavior changed.
+
+## Example template
+
+```md
+## Added
+- New tool policy audit view in Rainy ATM activity section.
+
+## Changed
+- Agent builder now validates missing Airlock settings before deploy.
+
+## Fixed
+- Resolved workspace picker issue when paths include special characters.
+
+## Breaking or behavior changes
+- Command approval timeout for sensitive actions is now 10 seconds.
+
+## Upgrade notes
+- BETA 1 remains macOS-only.
+- If macOS blocks launch, use System Settings -> Privacy & Security -> Open Anyway.
+```

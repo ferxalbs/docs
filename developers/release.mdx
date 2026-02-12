@@ -4,10 +4,10 @@ description: Prepare and ship a stable Rainy MaTE desktop release with synchroni
 icon: package-check
 ---
 
-## 1. Finalize code changes
+## 1. Freeze the release scope
 
-- Keep features and docs in the same release branch.
-- Confirm no unresolved TODO items remain for launch-critical behavior.
+- Keep code and docs aligned in the same release work.
+- Resolve or defer open TODO items clearly.
 
 ## 2. Run release validations
 
@@ -41,5 +41,5 @@ pnpm run tauri build
 ## 5. Publish and communicate
 
 - Publish the GitHub release artifacts.
-- Update release notes with behavior changes and migration impact.
+- Write release notes using `/developers/release-notes-policy`.
 - Confirm docs on Mintlify reflect the same release version.
