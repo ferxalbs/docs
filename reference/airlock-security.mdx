@@ -1,0 +1,44 @@
+---
+title: Airlock security
+description: Airlock approval model and command risk levels for Rainy MaTE.
+icon: shield-check
+---
+
+## Overview
+
+Airlock is the command firewall between cloud-queued tasks and local execution.
+
+Implementation source:
+
+- `src-tauri/src/services/airlock.rs`
+- `src-tauri/src/services/skill_executor.rs`
+
+## Airlock levels
+
+| Level | Name | Behavior |
+| :--- | :--- | :--- |
+| `0` | Safe | Auto-approved read operations |
+| `1` | Sensitive | Requires approval flow (notification) |
+| `2` | Dangerous | Requires explicit approval |
+
+## Timeout behavior
+
+- Sensitive requests time out after `10` seconds.
+- Dangerous requests time out after `30` seconds.
+- Timeout defaults to deny.
+
+## Headless mode behavior
+
+- Safe: always auto-approved.
+- Sensitive: can auto-approve in headless mode.
+- Dangerous: never bypassed by headless mode.
+
+## Tool risk examples
+
+- Safe: `read_file`, `list_files`, `search_files`, `web_search`, `read_web_page`, `screenshot`
+- Sensitive: `write_file`, `mkdir`, `browse_url`, `click_element`
+- Dangerous: `execute_command`, `delete_file`, `move_file`
+
+<Warning>
+  Keep dangerous commands behind explicit approval in production workspaces.
+</Warning>

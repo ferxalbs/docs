@@ -1,35 +1,36 @@
 ---
 title: Agent Builder
-description: Build and deploy custom agents with explicit skills, memory, and Airlock policy.
+description: Create and maintain custom agent profiles with controlled skill and policy scope.
 icon: bot
 ---
 
 ## Builder sections
 
-`Agent Builder` has four editing tabs:
+Agent Builder is split into four editing areas:
 
-- `Soul`: identity, role, and high-level behavior.
-- `Skills`: capabilities the agent can use.
-- `Memory`: retention and retrieval configuration.
-- `Airlock`: permission policy and tool-level controls.
+- `Soul`: role, purpose, and execution style.
+- `Skills`: tool capabilities available to the agent.
+- `Memory`: context retention behavior.
+- `Airlock`: risk and approval policy.
 
-## Save and deploy
+## Safe first deployment flow
 
-- `Save Draft` stores the agent spec locally.
-- `Deploy` publishes the spec to Rainy ATM.
-
-Deployment requires valid ATM credentials loaded in the app.
-
-## Recommended production flow
-
-1. Start with a narrow role and clear boundaries in `Soul`.
-2. Add only required skills.
-3. Keep memory scope minimal at first.
+1. Define a narrow role in `Soul`.
+2. Enable only required tools in `Skills`.
+3. Keep memory minimal for first iteration.
 4. Set restrictive Airlock defaults.
-5. Test in `Agent Chat` before cloud deployment.
+5. Save and test in `Agent Chat`.
+6. Deploy after behavior review.
 
-## Common pitfalls
+## Save and deploy behavior
 
-- Over-broad skills on first version.
-- Missing Airlock constraints for shell and destructive filesystem tools.
-- Deploying without validating behavior in a controlled workspace.
+- `Save Draft`: persists locally.
+- `Deploy`: publishes to Rainy ATM.
+
+Deployment requires a valid Rainy ATM connection.
+
+## Common mistakes
+
+- Defining broad roles that trigger uncontrolled tool use.
+- Allowing command execution too early.
+- Deploying without running local test prompts first.

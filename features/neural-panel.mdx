@@ -1,37 +1,37 @@
 ---
 title: Rainy ATM (Neural panel)
-description: Connect the desktop node to Cloud Cortex, manage agents, and inspect command activity.
+description: Connect Rainy MaTE to Cloud Cortex, deploy agents, and audit remote executions.
+icon: brain
 ---
 
-## What it does
+## Purpose
 
-The `Rainy ATM` section connects your desktop app to Cloud Cortex and exposes operational controls for remote workflows.
+`Rainy ATM` is the cloud operations panel for connecting a desktop node to Cloud Cortex and managing remote execution.
 
-If not connected, the panel asks for:
+## Connect the node
 
-- `Platform key`
-- `User API key`
-- Optional `Workspace name`
+1. Open `Rainy ATM` in the sidebar.
+2. Enter `Platform key` and `User API key`.
+3. Optionally set `Workspace name`.
+4. Confirm connection status in Dashboard.
 
-After connection, the panel provides three tabs.
+## Dashboard tab
 
-## Dashboard
+- Shows workspace identifiers.
+- Links directly to Cloud Cortex.
+- Generates temporary session codes for Telegram pairing.
 
-- Shows active workspace name and ID.
-- Provides a direct link to Cloud Cortex.
-- Generates a temporary session code for Telegram pairing.
+## Agents tab
 
-## Agents
+- Shows active deployed agents.
+- Supports fast navigation to Agent Builder for updates.
 
-- Lists active deployed agents.
-- Lets you jump directly into `Agent Builder` for deployment.
+## Activity tab
 
-## Activity
+- Lists recent command runs.
+- Shows status and timing data.
+- Helps investigate delays and failed executions.
 
-- Shows recent command history.
-- Displays per-command status, telemetry, and progress events.
-- Helps diagnose queue delay, run duration, and total duration.
-
-<Note>
-  Use this view as your operational audit surface for cloud-executed workflows.
-</Note>
+<Info>
+  Use Activity as your primary audit trail for production remote workflows.
+</Info>

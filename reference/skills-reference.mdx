@@ -1,0 +1,55 @@
+---
+title: Skills reference
+description: Current tool catalog and command constraints used by Rainy MaTE agent execution.
+icon: wrench
+---
+
+## Tool catalog
+
+The desktop runtime exposes these tools from `src-tauri/src/services/skill_executor.rs`.
+
+### Filesystem
+
+- `read_file`
+- `write_file`
+- `list_files`
+- `search_files`
+- `mkdir`
+- `delete_file`
+- `move_file`
+
+### Browser and web
+
+- `web_search`
+- `read_web_page`
+- `browse_url`
+- `click_element`
+- `screenshot`
+- `get_page_content`
+
+### Shell
+
+- `execute_command`
+
+## Shell allowlist
+
+`execute_command` is restricted to:
+
+- `npm`
+- `cargo`
+- `git`
+- `ls`
+- `grep`
+- `echo`
+- `cat`
+
+Commands outside this allowlist are blocked.
+
+## Policy enforcement
+
+Tool execution can be additionally restricted by cloud-supplied tool policies (`allow`, `deny`, and mode).
+
+## Related pages
+
+- `/reference/airlock-security`
+- `/features/autonomous-workflows`

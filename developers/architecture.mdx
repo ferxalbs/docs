@@ -1,0 +1,41 @@
+---
+title: Architecture
+description: Understand Rainy MaTE runtime boundaries between React UI, Tauri bridge, and Rust services.
+icon: blocks
+---
+
+## Runtime layers
+
+Rainy MaTE is split into clear layers:
+
+- `src/`: React + TypeScript desktop UI.
+- `src-tauri/src/`: Rust command handlers and services.
+- `src-tauri/tauri.conf.json`: packaging, updater, and app runtime config.
+
+## Design rule
+
+Keep heavy logic in Rust services and commands. Keep TypeScript focused on UI orchestration.
+
+## Core capability surfaces
+
+- `Agent Chat`: workspace prompt execution.
+- `Agent Builder`: agent spec authoring and policy setup.
+- `Agent Store`: review and deploy saved specs.
+- `Rainy ATM (Neural panel)`: cloud connection and activity stream.
+
+## Theme system
+
+- Default app theme: `rainy-tahoe`.
+- Theme definitions: `src/lib/themes.ts`.
+- Base tokens: `src/global.css`.
+
+Continue with `/components/design-system` for Tahoe documentation colors and surfaces.
+
+## Security boundary
+
+Cloud-originated commands are checked by Airlock before execution.
+
+- Airlock implementation: `src-tauri/src/services/airlock.rs`
+- Tool execution: `src-tauri/src/services/skill_executor.rs`
+
+Use `/reference/airlock-security` for approval behavior details.

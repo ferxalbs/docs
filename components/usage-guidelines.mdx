@@ -1,35 +1,40 @@
 ---
 title: Usage guidelines
-description: Implementation rules for Tahoe-consistent UI in Rainy MaTE.
+description: Implementation rules for Tahoe-consistent product and documentation interfaces.
 icon: ruler-combined
 ---
 
-## Layout and surfaces
+## Layout and readability
 
-- Keep hierarchy shallow and scannable.
-- Use translucent card surfaces with blur for layered UI.
-- Avoid introducing visual styles that conflict with Tahoe blue tokens.
+- Keep hierarchy shallow and predictable.
+- Use clear section titles and short procedural blocks.
+- Place prerequisites before action steps.
 
-## Color semantics
+## Color behavior
 
-- `Blue`: primary actions and informational state.
-- `Green`: success and healthy status.
-- `Yellow`: warning or pending state.
-- `Red`: errors and destructive actions.
+- Use Tahoe blue for primary intent and navigation emphasis.
+- Reserve green for success, yellow for warning, red for error.
+- Keep neutral surfaces low contrast to let status colors stand out.
+
+## Surfaces
+
+- Use translucent cards with blur for layered panels.
+- Avoid fully opaque heavy blocks in execution-heavy screens.
+- Keep borders subtle but visible in both light and dark modes.
 
 ## Motion
 
-- Keep transitions short and functional.
-- Use motion to clarify state changes, not for decoration.
+- Use short transitions for state changes.
+- Avoid decorative animation in operational workflows.
 
 ## Accessibility baseline
 
-- Maintain readable contrast in both light and dark mode.
-- Ensure keyboard access for actionable controls.
-- Keep labels explicit on security-sensitive actions.
+- Maintain readable contrast in light and dark modes.
+- Keep keyboard focus visible on actionable elements.
+- Label destructive and security-sensitive actions explicitly.
 
-## Engineering constraints
+## Engineering alignment
 
-- Keep heavy logic in Rust services and commands.
-- Keep TypeScript primarily as UI orchestration.
-- Avoid dead code and stale documentation references.
+- Keep business logic in Rust (`src-tauri/src`).
+- Keep TypeScript focused on UI behavior and state.
+- Remove dead code and stale docs references before release.

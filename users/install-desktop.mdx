@@ -1,0 +1,49 @@
+---
+title: Install desktop app
+description: Install Rainy MaTE for production use and keep the desktop client updated.
+icon: download
+---
+
+## Supported deployment model
+
+Rainy MaTE is distributed as a desktop app. The current documented release baseline is `0.5.19`.
+
+## Install from GitHub releases
+
+1. Open [Rainy MaTE Releases](https://github.com/ferxalbs/rainy-cowork/releases).
+2. Download the latest package for your OS.
+3. Install and launch the app.
+
+## First launch checklist
+
+- Confirm the app opens without update errors.
+- Add at least one workspace folder.
+- Configure and validate one provider key.
+- Run a simple task in `Agent Chat`.
+
+## Update strategy for production teams
+
+- Keep all operator desktops on the same release tag.
+- Apply updates in a staging workspace first.
+- Roll out to production users after successful validation.
+
+<Warning>
+  Avoid mixing old and new desktop versions in the same operations team when using shared Rainy ATM workflows.
+</Warning>
+
+## Build from source (advanced)
+
+Use source builds only if you need custom code changes.
+
+```bash
+pnpm install
+pnpm tauri dev
+```
+
+For release builds:
+
+```bash
+pnpm tauri build
+```
+
+Continue with `/users/first-workflow` after install.

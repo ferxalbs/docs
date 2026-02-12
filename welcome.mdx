@@ -1,45 +1,40 @@
 ---
 title: Welcome to Rainy MaTE
 sidebarTitle: Welcome
-description: Open-source AI desktop agent platform built with React, Tauri, and Rust.
+description: Public launch documentation for installing, operating, and developing Rainy MaTE.
 ---
 
-Rainy MaTE is a desktop AI agent platform for workspace automation. It combines a React UI, a Tauri bridge, and a Rust backend with an Airlock approval model.
+Rainy MaTE is a desktop AI workspace built with React, Tauri, and Rust. These docs are organized by outcome so you can move from setup to reliable production use.
 
-Use this documentation to install the app, configure providers, and run production workflows with clear approval boundaries.
+## Choose your path
 
 <CardGroup cols={2}>
-  <Card title="Quickstart" icon="bolt" href="/quickstart">
-    Install the app, configure your provider keys, and run your first task.
+  <Card title="I want to use the app" icon="rocket" href="/quickstart">
+    Install Rainy MaTE, connect your provider key, select a workspace, and run your first task.
   </Card>
-  <Card title="Agent chat" icon="sparkles" href="/features/agent-chat">
-    Run day-to-day prompts in your selected workspace with model and agent controls.
+  <Card title="I run operations" icon="brain" href="/features/neural-panel">
+    Connect Rainy ATM, monitor cloud activity, and control remote sessions.
   </Card>
-  <Card title="Agent builder" icon="bot" href="/features/agent-builder">
-    Define agent persona, skills, memory, and Airlock policy.
+  <Card title="I build or extend Rainy" icon="code" href="/developers/local-setup">
+    Set up the local development environment, run tests, and ship changes.
   </Card>
-  <Card title="Rainy ATM" icon="brain" href="/features/neural-panel">
-    Connect your desktop node to Cloud Cortex and monitor commands.
+  <Card title="I need security details" icon="shield" href="/reference/airlock-security">
+    Review Airlock levels, approval behavior, and tool risk mapping.
   </Card>
 </CardGroup>
 
-## Product map
+## What you will find in this documentation
 
-The desktop sidebar is organized into these sections:
+- `Start here`: Fast onboarding for first-time users.
+- `User guide`: Daily workflows, feature behavior, and troubleshooting.
+- `Developer guide`: Local setup, architecture, testing, and release steps.
+- `Reference`: Security policies, tool catalog, and Tahoe design tokens.
 
-- `Agent Chat`: interactive prompt execution inside a selected workspace folder.
-- `Rainy ATM`: Cloud Cortex connection, remote pairing, agent fleet, and activity stream.
-- `Agent Builder`: create or edit agent specs and deploy to Rainy ATM.
-- `Agents Store`: review and edit saved specs, then deploy selected agents.
-- `AI Provider`: store and validate provider keys.
-- `Appearance`: switch theme and mode.
+## Current release target
 
-## Security model
+This documentation matches the `0.5.19` desktop release configured in `src-tauri/tauri.conf.json`.
 
-Rainy MaTE uses Airlock levels for tool execution:
-
-- `Level 0 (Safe)`: read-only actions.
-- `Level 1 (Sensitive)`: write and navigation actions.
-- `Level 2 (Dangerous)`: shell execution and destructive filesystem actions.
-
-The complete mapping is documented in `/features/autonomous-workflows`.
+<Info>
+  If your installed app version differs from `0.5.19`, check the GitHub release notes
+  before relying on command behavior or UI labels.
+</Info>

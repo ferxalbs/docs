@@ -10,47 +10,68 @@
   "colors": {
     "primary": "#2563EB",
     "light": "#60A5FA",
-    "dark": "#1E40AF"
+    "dark": "#1E3A8A"
   },
   "navigation": {
     "tabs": [
       {
-        "tab": "Get started",
+        "tab": "Start here",
         "groups": [
           {
-            "group": "Setup",
+            "group": "Overview",
             "pages": ["welcome", "quickstart"]
           }
         ]
       },
       {
-        "tab": "Product",
+        "tab": "User guide",
         "groups": [
           {
-            "group": "Core workflows",
+            "group": "Setup and operations",
+            "pages": [
+              "users/install-desktop",
+              "users/first-workflow",
+              "features/neural-panel",
+              "guides/telegram-integration",
+              "guides/telegram-best-practices",
+              "users/troubleshooting"
+            ]
+          },
+          {
+            "group": "Feature guides",
             "pages": [
               "features/agent-chat",
               "features/autonomous-workflows",
               "features/agent-builder",
-              "features/agent-store",
-              "features/neural-panel"
+              "features/agent-store"
             ]
-          },
-          {
-            "group": "Design system",
-            "pages": ["components/design-system", "components/usage-guidelines"]
           }
         ]
       },
       {
-        "tab": "Integrations",
+        "tab": "Developer guide",
         "groups": [
           {
-            "group": "Cloud and messaging",
+            "group": "Build and maintain",
             "pages": [
-              "guides/telegram-integration",
-              "guides/telegram-best-practices"
+              "developers/local-setup",
+              "developers/architecture",
+              "developers/testing",
+              "developers/release"
             ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Security and tools",
+            "pages": ["reference/airlock-security", "reference/skills-reference"]
+          },
+          {
+            "group": "Tahoe design",
+            "pages": ["components/design-system", "components/usage-guidelines"]
           }
         ]
       }

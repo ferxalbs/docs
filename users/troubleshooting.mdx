@@ -1,0 +1,43 @@
+---
+title: Troubleshooting
+description: Resolve common setup, provider, workspace, and Rainy ATM issues.
+icon: wrench
+---
+
+## App does not run after install
+
+- Confirm you installed the correct package for your OS.
+- Reopen the app and check whether an update prompt blocks startup.
+- If needed, reinstall from the latest release package.
+
+## Provider validation fails
+
+- Recheck API key formatting and copied value.
+- Confirm network access to your provider endpoint.
+- Remove and re-add the key in `Settings -> Models`.
+
+## Agent cannot read or write files
+
+- Verify the intended folder is selected as active workspace.
+- Confirm the target path is inside the selected workspace root.
+- Re-add the workspace folder if access permissions changed.
+
+## Command blocked by Airlock
+
+- Review command risk level in the approval request.
+- Approve only when the action and path are expected.
+- Update agent policy if the block is expected behavior.
+
+## Rainy ATM is disconnected
+
+- Open `Rainy ATM` and verify platform key and user API key.
+- Confirm the desktop node has network access.
+- Reconnect and check that the dashboard shows an active workspace.
+
+## Telegram pairing fails
+
+- Generate a new session code from Rainy ATM.
+- Pair quickly because codes are short-lived.
+- Confirm you are messaging `@RainyAMTBot`.
+
+If problems continue, open an issue with logs and reproduction steps: [GitHub issues](https://github.com/ferxalbs/rainy-cowork/issues).

@@ -1,42 +1,44 @@
 ---
 title: Telegram integration
-description: Pair a Telegram chat with your Rainy ATM workspace for remote agent access.
+description: Pair Telegram with Rainy ATM for remote prompts and operational commands.
 icon: telegram
 ---
 
-## Overview
+## Use case
 
-Rainy ATM supports Telegram as a remote control channel. Pairing is done with a short-lived session code generated from the desktop app.
+Telegram lets operators send prompts and run remote workflows when away from the desktop UI.
 
 ## Prerequisites
 
-- Rainy MaTE desktop app connected in `Rainy ATM`.
+- Desktop app connected in `Rainy ATM`.
+- At least one deployed agent.
 - Access to Telegram.
-- A running workspace with at least one deployed agent.
 
-## Pair a chat
+## Pairing flow
 
-1. Open `Rainy ATM` in the desktop app.
-2. In `Dashboard`, click `Generate Session Code`.
-3. Open [@RainyAMTBot](https://t.me/RainyAMTBot) in Telegram.
-4. Send the code in chat.
-5. Wait for `Pairing Successful` confirmation.
+1. Open `Rainy ATM -> Dashboard`.
+2. Generate a session code.
+3. Open [@RainyAMTBot](https://t.me/RainyAMTBot).
+4. Send the session code.
+5. Wait for pairing confirmation.
 
-## Core commands
+## Common commands
 
-| Command | Purpose |
+| Command | Description |
 | :--- | :--- |
-| `/help` | Show command help |
-| `/ask <prompt>` | Send a prompt to the active agent |
-| `/browse <url>` | Queue a browse-and-summarize workflow |
+| `/help` | Show available commands |
+| `/ask <prompt>` | Send prompt to active agent |
+| `/browse <url>` | Queue browse-and-summarize task |
 | `/agent list` | List deployed agents |
-| `/agent current` | Show selected agent |
-| `/agent use [id-or-name]` | Switch active agent for this chat |
-| `/agent clear` | Reset selection to workspace default |
-| `/node status` | Check desktop node connection |
+| `/agent current` | Show active agent |
+| `/agent use [id-or-name]` | Switch active agent |
+| `/agent clear` | Reset to workspace default |
+| `/node status` | Check desktop node status |
 
-## Security notes
+## Security behavior
 
 - Pairing codes are temporary.
-- Commands still follow Airlock policy during execution.
-- If needed, use desktop logout/disconnect to revoke the current session.
+- Tool runs still go through Airlock policy.
+- You can revoke access by disconnecting the workspace from desktop Rainy ATM.
+
+Read `/guides/telegram-best-practices` before enabling this in production operations.

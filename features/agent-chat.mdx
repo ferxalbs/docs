@@ -1,34 +1,42 @@
 ---
 title: Agent Chat
-description: Main workspace chat for running prompts, plans, and tool execution.
+description: Run workspace-scoped prompts with planning, execution, and approval controls.
+icon: messages-square
 ---
 
-## What it does
+## What Agent Chat is for
 
-`Agent Chat` is the default operating surface for Rainy MaTE. It runs prompts against the currently selected workspace folder and uses the selected model and agent spec.
+`Agent Chat` is the main execution surface. Prompts run against the active workspace folder with the currently selected model and agent profile.
 
-## Top controls
+## Session controls
 
-- `Agent selector`: pick which saved agent spec to run.
-- `Model selector`: pick the active model.
-- `Theme toggle`: switch light or dark mode quickly.
-- `Clear UI`: clears visible chat messages.
-- `Delete context (memory)`: clears persisted chat context for the active workspace.
+- `Agent selector`: chooses behavior and policy profile.
+- `Model selector`: chooses inference model.
+- `Clear UI`: removes visible messages.
+- `Delete context (memory)`: resets local chat context for the workspace.
 
-## Prompt workflow
+## Standard execution flow
 
 1. Select workspace folder.
 2. Select agent and model.
-3. Send a prompt.
-4. Review generated plan steps.
-5. Approve or reject actions that require Airlock confirmation.
+3. Submit prompt.
+4. Review proposed plan.
+5. Approve or reject gated actions.
+6. Review outputs and file changes.
 
-<Note>
-  Press `Enter` to send. Use `Shift + Enter` for a newline in the input box.
-</Note>
+## Prompting guidance for stable results
 
-## Behavior to expect
+- Give one concrete objective per prompt.
+- Include path boundaries when file edits are expected.
+- For destructive work, require confirmation in prompt instructions.
 
-- The panel shows planning and execution phases.
-- Model selection persists through app commands.
-- Chat uses workspace-scoped context, so folder selection matters for outcomes.
+Example:
+
+```text
+Refactor only files in src/components/settings. Show a plan first and wait for approval before edits.
+```
+
+## Keyboard behavior
+
+- `Enter`: send prompt
+- `Shift + Enter`: insert newline

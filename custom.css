@@ -1,36 +1,27 @@
 :root {
-  --tahoe-blue-500: #2563eb;
+  --tahoe-blue-700: #1e3a8a;
+  --tahoe-blue-600: #2563eb;
   --tahoe-blue-400: #60a5fa;
-  --tahoe-blue-800: #1e40af;
-}
-
-.dark body {
-  background-image: radial-gradient(
-      1200px 600px at 10% -10%,
-      rgba(37, 99, 235, 0.16),
-      transparent 60%
-    ),
-    radial-gradient(
-      900px 500px at 100% 0%,
-      rgba(96, 165, 250, 0.12),
-      transparent 55%
-    );
+  --tahoe-ice: #f8faff;
+  --tahoe-night: #0b1220;
 }
 
 .light body {
-  background-image: radial-gradient(
-      1000px 500px at 0% -10%,
-      rgba(37, 99, 235, 0.08),
-      transparent 60%
-    ),
-    radial-gradient(
-      800px 450px at 100% 0%,
-      rgba(96, 165, 250, 0.08),
-      transparent 55%
-    );
+  background-color: var(--tahoe-ice);
+  background-image:
+    radial-gradient(1100px 560px at 8% -10%, rgba(37, 99, 235, 0.14), transparent 62%),
+    radial-gradient(900px 520px at 100% 0%, rgba(96, 165, 250, 0.1), transparent 58%);
+}
+
+.dark body {
+  background-color: var(--tahoe-night);
+  background-image:
+    radial-gradient(1200px 620px at 8% -10%, rgba(37, 99, 235, 0.2), transparent 64%),
+    radial-gradient(920px 560px at 100% 0%, rgba(96, 165, 250, 0.14), transparent 60%);
 }
 
 .card,
-.docs-card {
+.docs-card,
+[class*="card"] {
   backdrop-filter: blur(10px);
 }

@@ -1,0 +1,45 @@
+---
+title: Release process
+description: Prepare and ship a stable Rainy MaTE desktop release with synchronized documentation.
+icon: package-check
+---
+
+## 1. Finalize code changes
+
+- Keep features and docs in the same release branch.
+- Confirm no unresolved TODO items remain for launch-critical behavior.
+
+## 2. Run release validations
+
+```bash
+pnpm run build
+cd src-tauri && cargo test
+```
+
+If documentation changed:
+
+```bash
+cd rainy-docs
+mint broken-links
+mint validate
+```
+
+## 3. Verify release metadata
+
+Check and align version values before tagging:
+
+- `package.json`
+- `src-tauri/Cargo.toml`
+- `src-tauri/tauri.conf.json`
+
+## 4. Build desktop artifacts
+
+```bash
+pnpm run tauri build
+```
+
+## 5. Publish and communicate
+
+- Publish the GitHub release artifacts.
+- Update release notes with behavior changes and migration impact.
+- Confirm docs on Mintlify reflect the same release version.

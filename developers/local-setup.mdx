@@ -1,0 +1,59 @@
+---
+title: Local setup
+description: Set up Rainy MaTE for local development with frontend and Tauri runtime.
+icon: terminal
+---
+
+## Prerequisites
+
+Install these tools before cloning:
+
+- Node.js `18+`
+- pnpm
+- Rust toolchain
+- Tauri prerequisites for your operating system
+
+## Clone and install
+
+```bash
+git clone https://github.com/ferxalbs/rainy-cowork.git
+cd rainy-cowork
+pnpm install
+```
+
+## Run development modes
+
+UI only:
+
+```bash
+pnpm run dev
+```
+
+Desktop app (UI + Tauri backend):
+
+```bash
+pnpm run tauri dev
+```
+
+## Build locally
+
+```bash
+pnpm run build
+pnpm run preview
+```
+
+## Optional related services
+
+If your workspace includes related repos, run them separately:
+
+```bash
+cd rainy-atm && bun run dev
+```
+
+```bash
+cd rainy-api-v2 && bun run dev
+```
+
+<Info>
+  `rainy-api-v2` and `rainy-sdk` may exist as related projects outside this repository checkout.
+</Info>

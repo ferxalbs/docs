@@ -1,36 +1,36 @@
 ---
 title: Tahoe design system
-description: Visual system and color tokens used across Rainy MaTE.
+description: Tahoe color, surface, and typography guidelines for Rainy MaTE documentation and UI.
 icon: palette
 ---
 
-## Overview
+## Theme direction
 
-`Rainy Tahoe` is the default product theme. It uses cool blue accents, translucent surfaces, and soft contrast to keep execution-heavy screens readable for long sessions.
+Tahoe is the default Rainy visual identity: clear blue primaries, soft atmospheric gradients, and translucent surfaces.
 
-## Core palette
+## Core Tahoe palette
 
-The Mintlify docs site mirrors the Tahoe blue system used by the app:
+| Token | Value | Usage |
+| :--- | :--- | :--- |
+| `Tahoe primary` | `#2563EB` | Primary actions and links |
+| `Tahoe light` | `#60A5FA` | Highlights and secondary accents |
+| `Tahoe deep` | `#1E3A8A` | Dark contrast accents |
+| `Dark background` | `#0B1220` | Atmosphere for dark layouts |
+| `Light background` | `#F8FAFF` | Atmosphere for light layouts |
 
-- `Primary`: `#2563EB`
-- `Light accent`: `#60A5FA`
-- `Dark accent`: `#1E40AF`
-- `Light background`: `#F8FAFF`
-- `Dark background`: `#0B1220`
+## Source of truth in this repository
 
-## Product token reference
+- App theme tokens: `src/lib/themes.ts` (`rainy-tahoe`)
+- Base CSS tokens: `src/global.css`
+- Mintlify colors: `rainy-docs/docs.json`
+- Mintlify visual tuning: `rainy-docs/custom.css`
 
-The desktop app stores Tahoe theme tokens in `src/lib/themes.ts` under `rainy-tahoe`.
+## Surface pattern
 
-- Light primary token: `oklch(0.55 0.22 255)`
-- Dark primary token: `oklch(0.65 0.2 255)`
-
-## Surface style
-
-Use layered translucent surfaces for modal and card UI:
+For overlays, modals, and cards, use blur with translucent backgrounds.
 
 ```tsx
 <div className="backdrop-blur-md bg-white/10 border-white/20" />
 ```
 
-This pattern is required for overlays, modals, and cards in Rainy UI standards.
+This pattern keeps long workflows readable while preserving Tahoe depth.

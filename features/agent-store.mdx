@@ -1,26 +1,28 @@
 ---
 title: Agent Store
-description: Browse, review, edit, and deploy saved agent specs.
+description: Review, update, and deploy saved agent profiles.
+icon: store
 ---
 
-## What it does
+## Purpose
 
-`Agent Store` is the management surface for saved agents. Use it to inspect specs, update fields, and deploy existing agents without rebuilding from scratch.
+`Agent Store` is the inventory view for agent profiles already saved in your environment.
 
-## Core actions
+## What you can do
 
-- Search saved agents by name or description.
-- Open a selected agent in review/edit mode.
-- Save updates to local specs.
-- Deploy a selected spec to Rainy ATM.
-- Open selected spec in `Agent Builder` for full editing.
+- Search agents by name or description.
+- Inspect profile details before use.
+- Edit and save profile changes.
+- Deploy a selected profile to Rainy ATM.
+- Open a profile in Agent Builder for deeper edits.
 
-## Deployment behavior
+## Recommended team workflow
 
-Deployment requires valid Rainy ATM credentials. If credentials are missing, deployment is blocked until the Cloud connection is configured.
+1. Build and test draft agents in `Agent Builder`.
+2. Promote stable profiles into `Agent Store`.
+3. Use store reviews before each deployment.
+4. Keep a small set of approved production agents.
 
-## Recommended workflow
+## Deployment requirements
 
-1. Keep draft iteration in `Agent Builder`.
-2. Use `Agent Store` for review and controlled updates.
-3. Deploy only tested specs to keep cloud agents stable.
+Deployment from Agent Store requires active Rainy ATM credentials and connectivity.

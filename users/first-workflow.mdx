@@ -1,0 +1,49 @@
+---
+title: First workflow
+description: Complete a reliable first Rainy MaTE workflow from workspace setup to audited execution.
+icon: list-checks
+---
+
+## Goal
+
+Finish one end-to-end task with approvals, outputs, and activity visibility.
+
+## Step 1: set a workspace
+
+1. Click `Add Folder` in the sidebar.
+2. Select a folder that can be safely modified.
+3. Confirm it appears as the active workspace.
+
+## Step 2: select model and agent
+
+1. Open `Agent Chat`.
+2. Choose an agent profile.
+3. Choose a model from the selector.
+
+## Step 3: run a scoped prompt
+
+Start with a bounded request:
+
+```text
+Create a 5-step plan to improve README clarity in this repository. Do not edit files until approved.
+```
+
+## Step 4: handle Airlock approvals
+
+- `Safe` actions proceed automatically.
+- `Sensitive` actions require notification and approval flow.
+- `Dangerous` actions require explicit approval.
+
+Use `/reference/airlock-security` for the full policy behavior.
+
+## Step 5: verify output
+
+- Confirm created or changed files are inside the selected workspace.
+- Confirm generated content matches your request.
+- If using Rainy ATM, check execution events in the activity panel.
+
+## Next workflows
+
+- `/features/agent-builder` to create stricter custom agents.
+- `/features/neural-panel` to connect cloud operations.
+- `/guides/telegram-integration` for remote control by chat.

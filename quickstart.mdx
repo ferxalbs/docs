@@ -1,46 +1,69 @@
 ---
 title: Quickstart
-description: Install Rainy MaTE and run your first task with a configured workspace.
+description: Install Rainy MaTE and run your first workspace task in minutes.
 icon: bolt
 ---
 
-## Prerequisites
+## Before you begin
 
-- A supported desktop OS: macOS, Windows, or Linux.
-- One provider API key for either `Rainy API` or `Google Gemini`.
-- A local folder you want Rainy MaTE to work in.
+You need:
+
+- macOS, Windows, or Linux desktop access.
+- One provider API key that your deployment supports.
+- A local folder where Rainy MaTE can read and write files.
 
 ## Install the desktop app
 
-1. Open the [Rainy MaTE releases page](https://github.com/ferxalbs/rainy-cowork/releases).
-2. Download the installer for your operating system.
-3. Install and open the app.
+<Steps>
+  <Step title="Download the installer">
+    Open the [Rainy MaTE releases page](https://github.com/ferxalbs/rainy-cowork/releases) and choose your operating system package.
+  </Step>
+  <Step title="Install and open Rainy MaTE">
+    Complete installation and launch the app.
+  </Step>
+  <Step title="Grant folder access when prompted">
+    The app needs explicit workspace access for file operations.
+  </Step>
+</Steps>
 
-## Configure your provider key
+## Configure an AI provider
 
-1. Open `AI Provider` in the sidebar.
-2. Paste your API key for `Rainy API` or `Google Gemini`.
-3. Run `Validate`, then `Save`.
+<Steps>
+  <Step title="Open provider settings">
+    Go to `Settings -> Models` in the left sidebar.
+  </Step>
+  <Step title="Add your provider key">
+    Paste your key and run validation.
+  </Step>
+  <Step title="Save configuration">
+    Save the key so it can be used by agent tasks.
+  </Step>
+</Steps>
 
 <Info>
-  Keys are stored locally by the desktop app. You can view, replace, or delete
-  them from the same settings page.
+  Provider keys are stored locally by the desktop app. Rotate or remove keys from the same settings panel.
 </Info>
 
-## Select a workspace folder
+## Set your first workspace
 
-1. In the `Workspace` section, click `Add First` or `+`.
-2. Choose the project folder where the agent should work.
-3. The selected folder becomes the active workspace context.
+1. Click `Add Folder` in the sidebar workspace section.
+2. Choose the project folder you want Rainy MaTE to use.
+3. Confirm that the folder appears as the active workspace.
 
 ## Run your first task
 
 1. Open `Agent Chat`.
-2. Select a model and an agent from the top controls.
-3. Send a prompt, for example: `Summarize this repository structure and list the highest-risk files to review first.`
+2. Select a model and agent.
+3. Send a prompt such as:
 
-## Next steps
+```text
+Scan this repository and create a short risk-based review plan.
+```
 
-- `/features/autonomous-workflows` for planning, execution, and approval behavior.
-- `/features/agent-builder` for custom agents.
-- `/features/neural-panel` for Cloud Cortex connection and remote operations.
+4. Approve or reject any Airlock-gated actions.
+
+## Continue
+
+- `/users/first-workflow` for a full first-session checklist.
+- `/features/autonomous-workflows` for plan and approval behavior.
+- `/users/troubleshooting` if setup or execution fails.

@@ -1,29 +1,29 @@
 ---
 title: Telegram best practices
-description: Keep remote agent sessions reliable, secure, and easy to operate.
+description: Operate Telegram remote access safely and consistently in production.
 icon: star
 ---
 
-## Prompt design
+## Prompt discipline
 
-- Keep prompts short and explicit.
-- Break large tasks into small commands.
-- Prefer follow-up refinement over one oversized instruction.
+- Keep prompts short and specific.
+- Execute one objective per command.
+- Ask for plans before broad file modifications.
 
 ## Operational discipline
 
-- Use `/agent current` before critical tasks.
-- Use `/node status` when responses are delayed.
-- Keep one workspace objective per chat thread to reduce context drift.
+- Run `/agent current` before critical prompts.
+- Run `/node status` when response latency increases.
+- Keep one workspace objective per chat thread.
 
-## Security
+## Security controls
 
-- Do not share pairing codes.
-- Revoke sessions when team membership changes.
-- Keep destructive actions gated behind Airlock confirmation in the desktop app.
+- Never share session codes.
+- Rotate pairing by reconnecting if team access changes.
+- Keep dangerous actions behind explicit Airlock approvals.
 
-## Reliability
+## Failure handling
 
-- `/browse` tasks can run longer than normal chat prompts.
-- When a task fails, retry with narrower scope.
-- Use Rainy ATM `Activity` to inspect queue and execution timing.
+- Retry with narrower scope when a run fails.
+- Inspect desktop Rainy ATM Activity for root cause.
+- Escalate persistent failures to desktop-side troubleshooting.

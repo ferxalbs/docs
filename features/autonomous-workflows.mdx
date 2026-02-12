@@ -1,36 +1,37 @@
 ---
 title: Autonomous workflows
-description: How Rainy MaTE plans tasks, runs tools, and enforces Airlock approvals.
+description: How Rainy MaTE plans tasks, executes tools, and enforces approval boundaries.
 icon: diagram-project
 ---
 
-## Execution loop
+## Execution model
 
-Rainy MaTE executes tasks in a plan-and-act loop:
+Rainy MaTE follows a plan-and-act loop:
 
-1. Parse your goal into actionable steps.
-2. Select tools per step.
-3. Run tools with Airlock checks.
-4. Stream progress and outputs.
-5. Continue until completion or user interruption.
-
-## Airlock levels
-
-Rainy MaTE classifies tools into three levels.
-
-| Level | Meaning | Examples |
-| :--- | :--- | :--- |
-| `0` | Safe read-only | `read_file`, `list_files`, `search_files`, `web_search`, `read_web_page`, `screenshot`, `get_page_content` |
-| `1` | Sensitive state-changing | `write_file`, `append_file`, `mkdir`, `browse_url`, `click_element`, `navigate` |
-| `2` | Dangerous/destructive | `execute_command`, `delete_file`, `move_file` |
+1. Interpret your goal.
+2. Break into executable steps.
+3. Select tools per step.
+4. Run steps with Airlock checks.
+5. Stream progress and continue until done or interrupted.
 
 ## Why this matters
 
-- You can allow autonomous progress for low-risk steps.
-- You can keep explicit human approval on destructive actions.
-- You can audit command execution from `Rainy ATM > Activity`.
+This model lets you keep fast automation while preserving control over risky operations.
+
+## Airlock levels in workflows
+
+| Level | Meaning | Typical tools |
+| :--- | :--- | :--- |
+| `Safe` | Read-only operations | `read_file`, `list_files`, `web_search`, `read_web_page`, `screenshot` |
+| `Sensitive` | State-changing operations | `write_file`, `mkdir`, `browse_url`, `click_element` |
+| `Dangerous` | Destructive or command execution | `execute_command`, `delete_file`, `move_file` |
+
+## Operational recommendations
+
+- Keep `Dangerous` actions manually approved in production.
+- Start with narrow prompts and expand after success.
+- Use activity logs in Rainy ATM to audit execution behavior.
 
 <Warning>
-  Keep `Level 2` operations gated in production workflows unless you fully trust
-  the task and the current workspace scope.
+  Do not run broad destructive requests without explicit scope and approval.
 </Warning>

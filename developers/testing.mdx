@@ -1,0 +1,38 @@
+---
+title: Testing and validation
+description: Validate Rainy MaTE changes before release using Rust tests and docs checks.
+icon: flask-conical
+---
+
+## Rust test suite
+
+Run backend tests from the Tauri crate:
+
+```bash
+cd src-tauri
+cargo test
+```
+
+## Frontend quality checks
+
+The repository currently provides build verification through TypeScript + Vite:
+
+```bash
+pnpm run build
+```
+
+## Docs checks
+
+From `rainy-docs`, run Mintlify validation commands:
+
+```bash
+mint broken-links
+mint validate
+```
+
+## Release readiness checklist
+
+- Tests pass in `src-tauri`.
+- Frontend build passes at repo root.
+- Docs links and structure validate in `rainy-docs`.
+- Security-sensitive docs reflect current Airlock behavior.
