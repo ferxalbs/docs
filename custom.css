@@ -1,27 +1,51 @@
 :root {
   --tahoe-blue-700: #1e3a8a;
   --tahoe-blue-600: #2563eb;
-  --tahoe-blue-400: #60a5fa;
-  --tahoe-ice: #f8faff;
-  --tahoe-night: #0b1220;
+  --tahoe-blue-500: #3b82f6;
+  --tahoe-blue-300: #93c5fd;
+  --tahoe-ice: #f6f9ff;
+  --tahoe-night: #050b14;
+  --tahoe-night-soft: #0b1220;
 }
 
 .light body {
   background-color: var(--tahoe-ice);
   background-image:
-    radial-gradient(1100px 560px at 8% -10%, rgba(37, 99, 235, 0.14), transparent 62%),
-    radial-gradient(900px 520px at 100% 0%, rgba(96, 165, 250, 0.1), transparent 58%);
+    radial-gradient(980px 500px at 6% -12%, rgba(37, 99, 235, 0.12), transparent 64%),
+    radial-gradient(760px 430px at 100% 0%, rgba(59, 130, 246, 0.09), transparent 60%);
 }
 
 .dark body {
   background-color: var(--tahoe-night);
   background-image:
-    radial-gradient(1200px 620px at 8% -10%, rgba(37, 99, 235, 0.2), transparent 64%),
-    radial-gradient(920px 560px at 100% 0%, rgba(96, 165, 250, 0.14), transparent 60%);
+    radial-gradient(1100px 600px at 8% -12%, rgba(37, 99, 235, 0.16), transparent 66%),
+    radial-gradient(820px 500px at 100% 0%, rgba(59, 130, 246, 0.1), transparent 62%);
 }
 
 .card,
 .docs-card,
 [class*="card"] {
-  backdrop-filter: blur(10px);
+  border-color: rgba(147, 197, 253, 0.2);
+  backdrop-filter: blur(12px);
+}
+
+.dark .card,
+.dark .docs-card,
+.dark [class*="card"] {
+  background: rgba(11, 18, 32, 0.55);
+}
+
+.dark h1,
+.dark h2,
+.dark h3 {
+  color: rgba(248, 250, 252, 0.96);
+}
+
+.dark p,
+.dark li {
+  color: rgba(203, 213, 225, 0.9);
+}
+
+a {
+  text-underline-offset: 3px;
 }
