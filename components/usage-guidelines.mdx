@@ -1,0 +1,53 @@
+---
+title: Usage Guidelines
+description: Best practices for using the Tahoe Design System.
+icon: ruler-combined
+---
+
+## Design Principles
+
+When building interfaces or extensions for Rainy MaTE, strictly adhere to the following principles:
+
+### 1. Liquid Glass
+
+Use `backdrop-blur-md` and semi-transparent backgrounds (`bg-white/10` or `bg-black/10`) for all overlay elements. This maintains context and depth.
+
+### 2. Semantic Colors
+
+Use widely recognized semantic colors for status indicators:
+
+- <span className="text-blue-500">Blue</span>: Primary action / Info
+- <span className="text-green-500">Green</span>: Success / Active
+- <span className="text-yellow-500">Yellow</span>: Warning / Pending
+- <span className="text-red-500">Red</span>: Error / Destructive
+
+### 3. Motion
+
+Use motion to enhance understanding, not to distract. Transitions should be around `200ms` and use an `ease-out` curve.
+
+## Accessibility
+
+- **Contrast**: Ensure text has sufficient contrast against its background.
+- **Keyboard Navigation**: All interactive elements must be focusable and usable via keyboard.
+- **Screen Readers**: Use semantic HTML and aria-labels where appropriate.
+
+## Code Style
+
+Follow the project's Typescript and React standards:
+
+- Use functional components with hooks.
+- Type strictly; avoid `any`.
+- Use `tailwind-merge` for class name composition.
+
+## Do's and Don'ts
+
+<CardGroup cols={2}>
+  <Card title="Do" icon="check" color="green">
+    - Use the provided HeroUI components. - Follow the color palette strictly. -
+    Test for accessibility.
+  </Card>
+  <Card title="Don't" icon="xmark" color="red">
+    - Use custom CSS when Tailwind utility classes suffice. - Introduce new
+    fonts. - Create inconsistent UI patterns.
+  </Card>
+</CardGroup>
