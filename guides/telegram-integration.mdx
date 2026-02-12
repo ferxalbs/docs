@@ -1,0 +1,65 @@
+---
+title: Telegram Integration
+description: Connect Rainy MaTE to Telegram for on-the-go access.
+icon: telegram
+---
+
+## Overview
+
+Rainy MaTE's Telegram integration allows you to interact with your agents, manage tasks, and receiving notifications directly from your favorite messaging app. It is built on a custom, high-performance connector that requires no external libraries.
+
+## Features
+
+- **Full Agent Access**: Chat with any of your deployed agents.
+- **Multi-Modal Support**: Send text, voice notes, photos, and files.
+- **Inline Controls**: Manage your session with interactive buttons.
+- **Secure Pairing**: Zero-trust linkage between your Telegram account and Rainy MaTE workspace.
+
+## Setup
+
+### 1. Create a Bot
+
+1.  Open Telegram and chat with [@BotFather](https://t.me/BotFather).
+2.  Send `/newbot` and follow the instructions to create a new bot.
+3.  Copy the **HTTP API Token** provided.
+
+### 2. Configure Rainy MaTE
+
+1.  Open the **Neural Panel** settings.
+2.  Navigate to **Integrations > Telegram**.
+3.  Paste your Bot Token.
+4.  (Optional) Set a `Webhook Secret` for enhanced security.
+
+## Commands
+
+| Command           | Description                                         |
+| :---------------- | :-------------------------------------------------- |
+| `/ask <prompt>`   | Send a specific prompt to the active agent.         |
+| `/browse <url>`   | Instruct the agent to browse and analyze a website. |
+| `/agent list`     | Show all available agents.                          |
+| `/agent use <id>` | Switch to a different agent.                        |
+| `/agent clear`    | Reset session to default agent.                     |
+
+## Interactive Controls
+
+Every session message includes a control panel:
+
+- **📊 Status**: Check connection health and active workspace.
+- **🤖 Agents**: Quick-switch menu for selecting agents.
+- **🚪 Logout**: Securely disconnect your Telegram account.
+
+## Architecture
+
+The integration follows a secure, event-driven architecture:
+
+1.  **Webhook**: Telegram sends an update to your Rainy MaTE instance.
+2.  **Verification**: The request signature is verified against your secret.
+3.  **Normalization**: The message is converted to a standard internal format.
+4.  **Deduplication**: Unique event IDs prevent duplicate processing.
+5.  **Queue**: The message is queued for the Agent Runtime.
+6.  **Resolution**: The agent processes the input and sends a response back via the Telegram API.
+
+<Note>
+  Rainy MaTE uses a pure `fetch` implementation for the Telegram API to ensure
+  maximum performance and minimal dependencies.
+</Note>
