@@ -3,10 +3,10 @@
   "name": "Rainy MaTE",
   "theme": "mint",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/whale.png",
+    "dark": "/logo/whale.png"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/logo/whale.png",
   "colors": {
     "primary": "#2563EB",
     "light": "#60A5FA",
