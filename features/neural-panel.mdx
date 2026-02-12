@@ -1,46 +1,37 @@
 ---
-title: Neural Panel
-description: The central nervous system of Rainy MaTE.
-icon: brain
+title: Rainy ATM (Neural panel)
+description: Connect the desktop node to Cloud Cortex, manage agents, and inspect command activity.
 ---
 
-## Overview
+## What it does
 
-The **Neural Panel** is the primary interface for interacting with Rainy MaTE's cognitive functions. It visualizes the state of active agents, displays real-time thought processes, and allows for direct intervention and guidance.
+The `Rainy ATM` section connects your desktop app to Cloud Cortex and exposes operational controls for remote workflows.
 
-Designed with our **Tahoe** theme, the Neural Panel offers a clean, distraction-free environment that adapts to your workflow.
+If not connected, the panel asks for:
 
-<img src="/images/neural-panel-screenshot.png" alt="Neural Panel Interface" />
+- `Platform key`
+- `User API key`
+- Optional `Workspace name`
 
-## Interface Components
+After connection, the panel provides three tabs.
 
-### 1. Active Agents Grid
+## Dashboard
 
-See all your currently running agents at a glance. Each card displays:
+- Shows active workspace name and ID.
+- Provides a direct link to Cloud Cortex.
+- Generates a temporary session code for Telegram pairing.
 
-- **Agent Name**: The identity of the agent.
-- **Current Task**: What the agent is working on right now.
-- **Status Indicator**: Visual cue for status (Idle, Thinking, Executing, Error).
+## Agents
 
-### 2. Live Thought Stream
+- Lists active deployed agents.
+- Lets you jump directly into `Agent Builder` for deployment.
 
-Watch Rainy MaTE think in real-time. The thought stream reveals the decision-making process, showing you exactly how the AI breaks down complex problems into actionable steps.
+## Activity
 
-### 3. Command Input
-
-Directly issue commands to your agents. The context-aware input suggests relevant actions based on the current state of your workspace.
-
-## Usage
-
-### Monitoring Agents
-
-Simply open the Neural Panel to see an overview of all system activity. The panel updates in real-time, providing instant feedback on agent performance.
-
-### Intervening
-
-If an agent needs guidance, you can pause its execution directly from the panel and provide new instructions or correct its course.
+- Shows recent command history.
+- Displays per-command status, telemetry, and progress events.
+- Helps diagnose queue delay, run duration, and total duration.
 
 <Note>
-  The Neural Panel is designed to be always-on but unobtrusive. You can toggle
-  its visibility with a global hotkey (default: `Cmd + .`).
+  Use this view as your operational audit surface for cloud-executed workflows.
 </Note>

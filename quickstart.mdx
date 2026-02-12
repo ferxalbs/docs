@@ -1,41 +1,46 @@
 ---
-title: Quickstart Guide
-description: Get up and running with Rainy MaTE in minutes.
+title: Quickstart
+description: Install Rainy MaTE and run your first task with a configured workspace.
 icon: bolt
 ---
 
 ## Prerequisites
 
-Before installing Rainy MaTE, ensure you have the following:
+- A supported desktop OS: macOS, Windows, or Linux.
+- One provider API key for either `Rainy API` or `Google Gemini`.
+- A local folder you want Rainy MaTE to work in.
 
-- **Operating System**: macOS 12+ (Monterey or later), Windows 10/11, or Linux (Ubuntu 20.04+).
-- **Hardware**: Minimum 8GB RAM (16GB recommended for local LLMs).
-- **API Keys**: An OpenAI or Anthropic API key is required for cloud-based intelligence.
+## Install the desktop app
 
-## Installation
+1. Open the [Rainy MaTE releases page](https://github.com/ferxalbs/rainy-cowork/releases).
+2. Download the installer for your operating system.
+3. Install and open the app.
 
-1.  **Download the Installer**: Visit our [releases page](https://github.com/ferxalbs/rainy-cowork/releases) and download the appropriate installer for your OS.
-2.  **Run the Installer**: Follow the on-screen instructions to install Rainy MaTE.
-3.  **Launch the App**: Open Rainy MaTE from your applications folder.
+## Configure your provider key
 
-## Initial Configuration
+1. Open `AI Provider` in the sidebar.
+2. Paste your API key for `Rainy API` or `Google Gemini`.
+3. Run `Validate`, then `Save`.
 
-On first launch, you will be guided through a setup wizard:
+<Info>
+  Keys are stored locally by the desktop app. You can view, replace, or delete
+  them from the same settings page.
+</Info>
 
-1.  **Sign In**: Create an account or sign in to sync your preferences.
-2.  **Connect AI Provider**: Enter your API key (e.g., OpenAI, Anthropic).
-3.  **Grant Permissions**: Rainy MaTE needs access to your file system to perform tasks. Grant the necessary permissions when prompted.
+## Select a workspace folder
 
-## Your First Task
+1. In the `Workspace` section, click `Add First` or `+`.
+2. Choose the project folder where the agent should work.
+3. The selected folder becomes the active workspace context.
 
-Once installed, try asking Rainy MaTE to perform a simple task:
+## Run your first task
 
-1.  Open the **Neural Panel** (`Cmd + .`).
-2.  Type: _"Analyze the current directory and summarize the project structure."_
-3.  Watch as Rainy MaTE autonomously explores your files and generates a report.
+1. Open `Agent Chat`.
+2. Select a model and an agent from the top controls.
+3. Send a prompt, for example: `Summarize this repository structure and list the highest-risk files to review first.`
 
-## Next Steps
+## Next steps
 
-- **[Explore Features](/features/neural-panel)**: Learn more about the Neural Panel.
-- **[Build Agents](/features/agent-builder)**: Create custom agents for specific workflows.
-- **[Join Community](https://discord.gg/rainy-mate)**: Connect with other users and developers.
+- `/features/autonomous-workflows` for planning, execution, and approval behavior.
+- `/features/agent-builder` for custom agents.
+- `/features/neural-panel` for Cloud Cortex connection and remote operations.

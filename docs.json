@@ -12,54 +12,56 @@
     "light": "#60A5FA",
     "dark": "#1E40AF"
   },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "GitHub",
-      "href": "https://github.com/ferxalbs/rainy-cowork"
-    }
-  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Get started",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "Setup",
             "pages": ["welcome", "quickstart"]
+          }
+        ]
+      },
+      {
+        "tab": "Product",
+        "groups": [
+          {
+            "group": "Core workflows",
+            "pages": [
+              "features/agent-chat",
+              "features/autonomous-workflows",
+              "features/agent-builder",
+              "features/agent-store",
+              "features/neural-panel"
+            ]
           },
           {
-            "group": "Integrations",
+            "group": "Design system",
+            "pages": ["components/design-system", "components/usage-guidelines"]
+          }
+        ]
+      },
+      {
+        "tab": "Integrations",
+        "groups": [
+          {
+            "group": "Cloud and messaging",
             "pages": [
               "guides/telegram-integration",
               "guides/telegram-best-practices"
             ]
           }
         ]
-      },
-      {
-        "tab": "Features",
-        "groups": [
-          {
-            "group": "Core Features",
-            "pages": [
-              "features/neural-panel",
-              "features/agent-builder",
-              "features/autonomous-workflows"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Components",
-        "groups": [
-          {
-            "group": "Design System",
-            "pages": ["components/design-system", "components/usage-guidelines"]
-          }
-        ]
       }
     ]
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "GitHub",
+      "href": "https://github.com/ferxalbs/rainy-cowork"
+    }
   },
   "footer": {
     "socials": {

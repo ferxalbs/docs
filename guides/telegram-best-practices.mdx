@@ -1,54 +1,29 @@
 ---
-title: Telegram Best Practices
-description: Optimize your agent interactions on Telegram.
+title: Telegram best practices
+description: Keep remote agent sessions reliable, secure, and easy to operate.
 icon: star
 ---
 
-## Designing for Chat
+## Prompt design
 
-Telegram is a chat interface, and your agents should be designed with that in mind.
+- Keep prompts short and explicit.
+- Break large tasks into small commands.
+- Prefer follow-up refinement over one oversized instruction.
 
-### 1. Conciseness is Key
+## Operational discipline
 
-Mobile screens have limited space.
-
-- **Do**: Instruct your agents to be brief and direct.
-- **Don't**: Send wall-of-text responses unless specifically asked for a report.
-
-### 2. Use formatting wisely
-
-Rainy MaTE automatically converts standard Markdown to Telegram-compatible formatting.
-
-- Use **bold** for emphasis.
-- Use `code blocks` for technical data or IDs.
-- Use lists to break down complex information.
+- Use `/agent current` before critical tasks.
+- Use `/node status` when responses are delayed.
+- Keep one workspace objective per chat thread to reduce context drift.
 
 ## Security
 
-### Webhook Secrets
+- Do not share pairing codes.
+- Revoke sessions when team membership changes.
+- Keep destructive actions gated behind Airlock confirmation in the desktop app.
 
-Always configure a `Webhook Secret` in both Telegram and Rainy MaTE. This strictly ensures that only updates from Telegram are processed by your agent runtime, preventing man-in-the-middle attacks or spoofed messages.
+## Reliability
 
-### Access Control
-
-Rainy MaTE uses a zero-trust pairing model.
-
-- Never share your pairing codes.
-- Regularly audit active sessions in the **Neural Panel**.
-- If a device is lost, revoke its access immediately from the desktop app.
-
-## Performance
-
-### Timeouts
-
-The default timeout for an agent response is **4 minutes**.
-
-- For complex research tasks (`/browse`), the agent might take longer.
-- **Best Practice**: Break down massive tasks into smaller, interactive steps. Instead of "Research the history of computing," try "Find the key events in 1990s computing."
-
-## Media Handling
-
-Rainy MaTE supports multi-modal interactions.
-
-- **Voice Notes**: You can speak to your agent. Ensure you speak clearly.
-- **Images**: Agents can analyze images. Send a photo and ask "What is in this image?" or "Extract the text from this screenshot."
+- `/browse` tasks can run longer than normal chat prompts.
+- When a task fails, retry with narrower scope.
+- Use Rainy ATM `Activity` to inspect queue and execution timing.

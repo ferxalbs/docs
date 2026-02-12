@@ -1,0 +1,26 @@
+---
+title: Agent Store
+description: Browse, review, edit, and deploy saved agent specs.
+---
+
+## What it does
+
+`Agent Store` is the management surface for saved agents. Use it to inspect specs, update fields, and deploy existing agents without rebuilding from scratch.
+
+## Core actions
+
+- Search saved agents by name or description.
+- Open a selected agent in review/edit mode.
+- Save updates to local specs.
+- Deploy a selected spec to Rainy ATM.
+- Open selected spec in `Agent Builder` for full editing.
+
+## Deployment behavior
+
+Deployment requires valid Rainy ATM credentials. If credentials are missing, deployment is blocked until the Cloud connection is configured.
+
+## Recommended workflow
+
+1. Keep draft iteration in `Agent Builder`.
+2. Use `Agent Store` for review and controlled updates.
+3. Deploy only tested specs to keep cloud agents stable.

@@ -1,42 +1,35 @@
 ---
 title: Agent Builder
-description: Create and customize your own AI agents.
-icon: robot
+description: Build and deploy custom agents with explicit skills, memory, and Airlock policy.
+icon: bot
 ---
 
-## Overview
+## Builder sections
 
-The **Agent Builder** allows you to extend Rainy MaTE's capabilities by creating custom agents. Whether you need a coding assistant, a data analyst, or a creative writer, the Agent Builder provides the tools to bring them to life.
+`Agent Builder` has four editing tabs:
 
-## Creating a New Agent
+- `Soul`: identity, role, and high-level behavior.
+- `Skills`: capabilities the agent can use.
+- `Memory`: retention and retrieval configuration.
+- `Airlock`: permission policy and tool-level controls.
 
-1.  **Navigate to Agent Builder**: clearSelect "Agent Builder" from the main menu.
-2.  **Define Core Identity**: Give your agent a name, a role, and a description. This helps shape its personality and approach to tasks.
-3.  **Select Skills**: Choose from the library of available skills. Skills are modular capabilities that define what your agent can do (e.g., `code-analysis`, `web-search`, `image-generation`).
-4.  **Set Scope**: Define the boundaries of your agent's operation. Limit access to specific directories or file types for security.
+## Save and deploy
 
-## Configuration Options
+- `Save Draft` stores the agent spec locally.
+- `Deploy` publishes the spec to Rainy ATM.
 
-### Personality
+Deployment requires valid ATM credentials loaded in the app.
 
-Adjust parameters like creativity, precision, and tone.
+## Recommended production flow
 
-- **Creativity**: How novel should the agent's solutions be?
-- **Precision**: How strictly should it adhere to instructions?
+1. Start with a narrow role and clear boundaries in `Soul`.
+2. Add only required skills.
+3. Keep memory scope minimal at first.
+4. Set restrictive Airlock defaults.
+5. Test in `Agent Chat` before cloud deployment.
 
-### Resource Allocation
+## Common pitfalls
 
-Allocate system resources to your agent. High-performance agents may require more memory and processing power.
-
-## Managing Agents
-
-Once created, agents appear in your **Agent Store**. From here you can:
-
-- **Activate/Deactivate**: Turn agents on or off as needed.
-- **Edit**: Update an agent's configuration as your needs change.
-- **Share**: Export your agent configurations to share with the community.
-
-<Tip>
-  Start with a predefined template to quickly create common agent types like
-  "Senior Developer" or "Technical Writer".
-</Tip>
+- Over-broad skills on first version.
+- Missing Airlock constraints for shell and destructive filesystem tools.
+- Deploying without validating behavior in a controlled workspace.

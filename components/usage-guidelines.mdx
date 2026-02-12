@@ -1,53 +1,35 @@
 ---
-title: Usage Guidelines
-description: Best practices for using the Tahoe Design System.
+title: Usage guidelines
+description: Implementation rules for Tahoe-consistent UI in Rainy MaTE.
 icon: ruler-combined
 ---
 
-## Design Principles
+## Layout and surfaces
 
-When building interfaces or extensions for Rainy MaTE, strictly adhere to the following principles:
+- Keep hierarchy shallow and scannable.
+- Use translucent card surfaces with blur for layered UI.
+- Avoid introducing visual styles that conflict with Tahoe blue tokens.
 
-### 1. Liquid Glass
+## Color semantics
 
-Use `backdrop-blur-md` and semi-transparent backgrounds (`bg-white/10` or `bg-black/10`) for all overlay elements. This maintains context and depth.
+- `Blue`: primary actions and informational state.
+- `Green`: success and healthy status.
+- `Yellow`: warning or pending state.
+- `Red`: errors and destructive actions.
 
-### 2. Semantic Colors
+## Motion
 
-Use widely recognized semantic colors for status indicators:
+- Keep transitions short and functional.
+- Use motion to clarify state changes, not for decoration.
 
-- <span className="text-blue-500">Blue</span>: Primary action / Info
-- <span className="text-green-500">Green</span>: Success / Active
-- <span className="text-yellow-500">Yellow</span>: Warning / Pending
-- <span className="text-red-500">Red</span>: Error / Destructive
+## Accessibility baseline
 
-### 3. Motion
+- Maintain readable contrast in both light and dark mode.
+- Ensure keyboard access for actionable controls.
+- Keep labels explicit on security-sensitive actions.
 
-Use motion to enhance understanding, not to distract. Transitions should be around `200ms` and use an `ease-out` curve.
+## Engineering constraints
 
-## Accessibility
-
-- **Contrast**: Ensure text has sufficient contrast against its background.
-- **Keyboard Navigation**: All interactive elements must be focusable and usable via keyboard.
-- **Screen Readers**: Use semantic HTML and aria-labels where appropriate.
-
-## Code Style
-
-Follow the project's Typescript and React standards:
-
-- Use functional components with hooks.
-- Type strictly; avoid `any`.
-- Use `tailwind-merge` for class name composition.
-
-## Do's and Don'ts
-
-<CardGroup cols={2}>
-  <Card title="Do" icon="check" color="green">
-    - Use the provided HeroUI components. - Follow the color palette strictly. -
-    Test for accessibility.
-  </Card>
-  <Card title="Don't" icon="xmark" color="red">
-    - Use custom CSS when Tailwind utility classes suffice. - Introduce new
-    fonts. - Create inconsistent UI patterns.
-  </Card>
-</CardGroup>
+- Keep heavy logic in Rust services and commands.
+- Keep TypeScript primarily as UI orchestration.
+- Avoid dead code and stale documentation references.

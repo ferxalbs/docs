@@ -1,63 +1,36 @@
 ---
-title: Tahoe Design System
-description: The visual language of Rainy MaTE.
+title: Tahoe design system
+description: Visual system and color tokens used across Rainy MaTE.
 icon: palette
 ---
 
 ## Overview
 
-Rainy MaTE utilizes the **Tahoe** design system, a custom visual language inspired by the serene blues and clean lines of Lake Tahoe. It emphasizes clarity, focus, and a premium aesthetic.
+`Rainy Tahoe` is the default product theme. It uses cool blue accents, translucent surfaces, and soft contrast to keep execution-heavy screens readable for long sessions.
 
-## Core Principles
+## Core palette
 
-### 1. Liquid Glass Aesthetics
+The Mintlify docs site mirrors the Tahoe blue system used by the app:
 
-The interface makes heavy use of backdrop blurs and semi-transparent gradients to create a sense of depth and fluidity. This "liquid glass" effect is a signature of the Rainy MaTE experience.
+- `Primary`: `#2563EB`
+- `Light accent`: `#60A5FA`
+- `Dark accent`: `#1E40AF`
+- `Light background`: `#F8FAFF`
+- `Dark background`: `#0B1220`
 
-### 2. Focus on Content
+## Product token reference
 
-Design elements are intentionally minimal, allowing the user's content and the AI's thoughts to take center stage. We use whitespace generously to prevent cognitive overload.
+The desktop app stores Tahoe theme tokens in `src/lib/themes.ts` under `rainy-tahoe`.
 
-### 3. Motion with Meaning
+- Light primary token: `oklch(0.55 0.22 255)`
+- Dark primary token: `oklch(0.65 0.2 255)`
 
-Animations are used not just for decoration, but to guide the user's attention and provide feedback on system status. Transitions are smooth and natural, mimicking organic movement.
+## Surface style
 
-## Color Palette
+Use layered translucent surfaces for modal and card UI:
 
-Our primary palette is rooted in deep, calming blues and vibrant accents.
-
-| Color            | Value     | Usage                                         |
-| :--------------- | :-------- | :-------------------------------------------- |
-| **Primary Blue** | `#2563EB` | Main actions, primary buttons, active states. |
-| **Light Accent** | `#60A5FA` | Hover states, secondary highlights.           |
-| **Dark Accent**  | `#1E40AF` | Background gradients, deep shadows.           |
-| **Surface**      | `#0F172A` | Main background color in dark mode.           |
-
-## Typography
-
-We use **Inter** for its excellent legibility and modern character. Headers are bold and expressive, while body text is clean and easy to read.
-
-## Components
-
-Rainy MaTE is built using **HeroUI v3**, ensuring accessibility and performance. We have customized the default HeroUI theme to match our Tahoe aesthetic.
-
-### Buttons
-
-Buttons feature a subtle gradient and a soft shadow that deepens on hover.
-
-```jsx
-<Button variant="primary">Launch Agent</Button>
+```tsx
+<div className="backdrop-blur-md bg-white/10 border-white/20" />
 ```
 
-### Cards
-
-Cards use the "liquid glass" effect, with a subtle border and a blurred background.
-
-```jsx
-<Card className="backdrop-blur-md bg-white/10 border-white/20">
-  <Card.Header>
-    <Card.Title>Agent Status</Card.Title>
-  </Card.Header>
-  <Card.Content>Online</Card.Content>
-</Card>
-```
+This pattern is required for overlays, modals, and cards in Rainy UI standards.

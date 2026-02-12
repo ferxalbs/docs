@@ -1,0 +1,34 @@
+---
+title: Agent Chat
+description: Main workspace chat for running prompts, plans, and tool execution.
+---
+
+## What it does
+
+`Agent Chat` is the default operating surface for Rainy MaTE. It runs prompts against the currently selected workspace folder and uses the selected model and agent spec.
+
+## Top controls
+
+- `Agent selector`: pick which saved agent spec to run.
+- `Model selector`: pick the active model.
+- `Theme toggle`: switch light or dark mode quickly.
+- `Clear UI`: clears visible chat messages.
+- `Delete context (memory)`: clears persisted chat context for the active workspace.
+
+## Prompt workflow
+
+1. Select workspace folder.
+2. Select agent and model.
+3. Send a prompt.
+4. Review generated plan steps.
+5. Approve or reject actions that require Airlock confirmation.
+
+<Note>
+  Press `Enter` to send. Use `Shift + Enter` for a newline in the input box.
+</Note>
+
+## Behavior to expect
+
+- The panel shows planning and execution phases.
+- Model selection persists through app commands.
+- Chat uses workspace-scoped context, so folder selection matters for outcomes.

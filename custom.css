@@ -1,0 +1,36 @@
+:root {
+  --tahoe-blue-500: #2563eb;
+  --tahoe-blue-400: #60a5fa;
+  --tahoe-blue-800: #1e40af;
+}
+
+.dark body {
+  background-image: radial-gradient(
+      1200px 600px at 10% -10%,
+      rgba(37, 99, 235, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 100% 0%,
+      rgba(96, 165, 250, 0.12),
+      transparent 55%
+    );
+}
+
+.light body {
+  background-image: radial-gradient(
+      1000px 500px at 0% -10%,
+      rgba(37, 99, 235, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      800px 450px at 100% 0%,
+      rgba(96, 165, 250, 0.08),
+      transparent 55%
+    );
+}
+
+.card,
+.docs-card {
+  backdrop-filter: blur(10px);
+}

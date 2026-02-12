@@ -1,44 +1,45 @@
 ---
 title: Welcome to Rainy MaTE
 sidebarTitle: Welcome
-description: The next-generation autonomous AI assistant for your workspace.
+description: Open-source AI desktop agent platform built with React, Tauri, and Rust.
 ---
 
-<img
-  className="block dark:hidden"
-  src="/logo/light.svg"
-  alt="Rainy MaTE Logo"
-/>
-<img className="hidden dark:block" src="/logo/dark.svg" alt="Rainy MaTE Logo" />
+Rainy MaTE is a desktop AI agent platform for workspace automation. It combines a React UI, a Tauri bridge, and a Rust backend with an Airlock approval model.
 
-## What is Rainy MaTE?
-
-Rainy MaTE is an advanced autonomous AI assistant designed to revolutionize how you interact with your digital workspace. Built on the "Tahoe" design system, it offers a seamless, intuitive, and powerful interface for managing tasks, deploying agents, and automating workflows.
+Use this documentation to install the app, configure providers, and run production workflows with clear approval boundaries.
 
 <CardGroup cols={2}>
-  <Card title="Neural Panel" icon="brain" href="/features/neural-panel">
-    Experience the cognitive core of Rainy MaTE. Visualize and interact with
-    your AI agents in real-time.
+  <Card title="Quickstart" icon="bolt" href="/quickstart">
+    Install the app, configure your provider keys, and run your first task.
   </Card>
-  <Card title="Agent Builder" icon="robot" href="/features/agent-builder">
-    Create custom AI agents tailored to your specific needs. define their
-    improved skills and scopes.
+  <Card title="Agent chat" icon="sparkles" href="/features/agent-chat">
+    Run day-to-day prompts in your selected workspace with model and agent controls.
+  </Card>
+  <Card title="Agent builder" icon="bot" href="/features/agent-builder">
+    Define agent persona, skills, memory, and Airlock policy.
+  </Card>
+  <Card title="Rainy ATM" icon="brain" href="/features/neural-panel">
+    Connect your desktop node to Cloud Cortex and monitor commands.
   </Card>
 </CardGroup>
 
-## Key Features
+## Product map
 
-Rainy MaTE brings a suite of powerful tools to your desktop:
+The desktop sidebar is organized into these sections:
 
-- **Autonomous Workflows**: Let Rainy MaTE handle complex, multi-step tasks without constant supervision.
-- **Zero-Trust Security**: Your data remains secure with our robust security architecture.
-- **Cross-Platform Support**: Available on macOS, Windows, and Linux.
-- **Extensible Skill System**: Expand your agents' capabilities with a growing library of skills.
+- `Agent Chat`: interactive prompt execution inside a selected workspace folder.
+- `Rainy ATM`: Cloud Cortex connection, remote pairing, agent fleet, and activity stream.
+- `Agent Builder`: create or edit agent specs and deploy to Rainy ATM.
+- `Agents Store`: review and edit saved specs, then deploy selected agents.
+- `AI Provider`: store and validate provider keys.
+- `Appearance`: switch theme and mode.
 
-## Getting Started
+## Security model
 
-Ready to dive in? Check out our quickstart guide to get up and running in minutes.
+Rainy MaTE uses Airlock levels for tool execution:
 
-<Card title="Quickstart Guide" icon="bolt" href="/quickstart">
-  Learn how to install and configure Rainy MaTE on your system.
-</Card>
+- `Level 0 (Safe)`: read-only actions.
+- `Level 1 (Sensitive)`: write and navigation actions.
+- `Level 2 (Dangerous)`: shell execution and destructive filesystem actions.
+
+The complete mapping is documented in `/features/autonomous-workflows`.

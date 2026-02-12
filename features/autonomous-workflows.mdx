@@ -1,39 +1,36 @@
 ---
-title: Autonomous Workflows
-description: Let Rainy MaTE handle complex tasks independently.
+title: Autonomous workflows
+description: How Rainy MaTE plans tasks, runs tools, and enforces Airlock approvals.
 icon: diagram-project
 ---
 
-## Overview
+## Execution loop
 
-**Autonomous Workflows** allow Rainy MaTE to execute multi-step objectives without constant human supervision. By chaining together research, planning, execution, and verification steps, the AI can handle complex projects from start to finish.
+Rainy MaTE executes tasks in a plan-and-act loop:
 
-## How It Works
+1. Parse your goal into actionable steps.
+2. Select tools per step.
+3. Run tools with Airlock checks.
+4. Stream progress and outputs.
+5. Continue until completion or user interruption.
 
-1.  **Trigger**: You provide a high-level goal (e.g., "Refactor the authentication system").
-2.  **Plan**: Rainy MaTE analyzes the request and creates a detailed [Implementation Plan](/components/usage-guidelines).
-3.  **Act**: The AI executes the plan, step-by-step, using its available tools.
-4.  **Verify**: After each step, the AI verifies the output to ensure correctness.
-5.  **Loop**: The cycle continues until the goal is achieved.
+## Airlock levels
 
-## Examples
+Rainy MaTE classifies tools into three levels.
 
-### Code Refactoring
+| Level | Meaning | Examples |
+| :--- | :--- | :--- |
+| `0` | Safe read-only | `read_file`, `list_files`, `search_files`, `web_search`, `read_web_page`, `screenshot`, `get_page_content` |
+| `1` | Sensitive state-changing | `write_file`, `append_file`, `mkdir`, `browse_url`, `click_element`, `navigate` |
+| `2` | Dangerous/destructive | `execute_command`, `delete_file`, `move_file` |
 
-Rainy MaTE can explore a codebase, identify legacy patterns, and apply modern best practices across multiple files.
+## Why this matters
 
-### Research & Report
+- You can allow autonomous progress for low-risk steps.
+- You can keep explicit human approval on destructive actions.
+- You can audit command execution from `Rainy ATM > Activity`.
 
-Ask Rainy MaTE to research a topic, gather data from multiple sources, and compile a comprehensive report with citations.
-
-### Deployment
-
-Automate your deployment pipeline by letting Rainy MaTE handle build, test, and release processes.
-
-## Safety & Control
-
-You remain in control at all times.
-
-- **Review Mode**: Require approval before critical actions (e.g., deleting files, deployment).
-- **Stop Button**: Instantly halt any workflow with a single click.
-- **Audit Logs**: Review a detailed log of every action taken by the AI.
+<Warning>
+  Keep `Level 2` operations gated in production workflows unless you fully trust
+  the task and the current workspace scope.
+</Warning>
