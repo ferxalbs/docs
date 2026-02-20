@@ -1,0 +1,39 @@
+---
+title: Encrypted Memory Vault
+description: Secure, vectorized context storage for your autonomous agents.
+icon: lock
+---
+
+## What is the Encrypted Memory Vault?
+
+The Encrypted Memory Vault is Rainy MaTE's local, privacy-first storage system. It ensures that the knowledge your agents gather and index from your workspaces remains entirely secure and entirely under your control.
+
+When your agent learns facts about your projects, reads your files, or stores snippets of code for later retrieval, this information is never stored in plaintext.
+
+## Key Features
+
+- **AES-256-GCM Encryption**: All memory content and metadata are encrypted at rest using military-grade AES-256-GCM encryption.
+- **Keychain Backed**: The master encryption key is securely generated and stored in your operating system's native keychain (e.g., macOS Keychain). Rainy MaTE does not hardcode or transmit this key.
+- **Vector Embeddings (3072 Dimensions)**: Memories are vectorized using Gemini (`gemini-embedding-001`) or OpenAI embeddings. This allows the agent to perform semantic searches (finding memories based on _meaning_ rather than exact keyword matches) instantly.
+- **Local-First Database**: The encrypted vault relies on a local Turso/libSQL database (`rainy_cowork_v2.db`), meaning your memories never leave your machine unless you explicitly configure a remote sync.
+
+## How it works
+
+When the agent decides to "remember" a piece of information:
+
+1. The text is sent to your selected Embedding Provider (e.g., Gemini) to convert the content into a 3072-dimensional vector.
+2. The original text content is encrypted locally using the master key retrieved from your system keychain.
+3. The encrypted text, along with the semantic vector and access metadata, is stored in the local SQLite database.
+
+When the agent needs to "recall" information:
+
+1. The agent's query is vectorized.
+2. The vault performs a lightning-fast cosine similarity search across the vectors to find the most relevant memories.
+3. The matching memories are decrypted locally and provided to the agent as context.
+
+## Managing your Embeddings
+
+By default, Rainy MaTE uses Gemini for generating embeddings since it provides a generous free tier with high-quality 3072-dimension vectors.
+
+- You can configure your Embedding Provider (Gemini or OpenAI) in the **Settings** menu.
+- Note: Changing the provider will affect how _new_ memories are vectorized. Older memories will retain their original vectors.

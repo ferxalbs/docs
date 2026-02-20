@@ -43,7 +43,8 @@
               "features/agent-chat",
               "features/autonomous-workflows",
               "features/agent-builder",
-              "features/agent-store"
+              "features/agent-store",
+              "features/encrypted-memory"
             ]
           }
         ]
@@ -56,6 +57,7 @@
             "pages": [
               "developers/local-setup",
               "developers/architecture",
+              "developers/memory-vault",
               "developers/agents-and-tools",
               "developers/private-atm-api",
               "developers/testing",
@@ -70,7 +72,10 @@
         "groups": [
           {
             "group": "Security and tools",
-            "pages": ["reference/airlock-security", "reference/skills-reference"]
+            "pages": [
+              "reference/airlock-security",
+              "reference/skills-reference"
+            ]
           },
           {
             "group": "Tahoe design",
